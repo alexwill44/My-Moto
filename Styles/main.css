@@ -2,3 +2,7 @@
     border: 2px solid red;
     background-color: grey;
 }
+
+.container, .nes-text {
+    font-family: 'Press Start 2P', cursive;
+}
