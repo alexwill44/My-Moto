@@ -1,8 +1,16 @@
 * {
-    border: 2px solid red;
+    border: 2px solid blue;
     background-color: grey;
+    padding: 5px;
 }
 
 .container, .nes-text {
     font-family: 'Press Start 2P', cursive;
+}
+
+.row2 {
+    height: 60vh;
+    display: flex;
+   padding: 0 20vh;
+
 }
