@@ -45,7 +45,22 @@
         Content goes here
         <section class="game-container">
             
-            <nav class='row1 statusbar'></nav>
+            <nav class='row1 statusbar'>
+                <div class="nes-container is-rounded">
+                    <a href="#" class="nes-badge is-splited">
+                        <span  class="is-dark">Odometer:</span>
+                        <span id='mileage' class="is-primary">0 miles</span>
+                      </a>
+                    <a href="#" class="nes-badge is-splited">
+                        <span id='rider' class="is-dark">Rider:</span>
+                        <span class="is-success">(game.name)</span>
+                      </a>
+                      <a href="#" class="nes-badge">
+                        <span id= 'motorcycle' class="is-error">Motorcyle: Suzuki Gamma 500</span>
+                      </a>
+                  </div>
+            </nav>
+            
             
             <img src="https://64.media.tumblr.com/159694d8fb55895d39cb6d7bb61ce294/7862d47e225b9b88-ed/s400x600/e828e513b090920934479537dd31481f650e1339.gifv" alt="your bike here" class="row2 moto">
             
@@ -88,12 +103,12 @@
                     <button id='oilChange' class="nes-btn" href="#">Change Oil</button>
                 </div>
                 
-                <div class="three column col5 refuel">
-                    <button type="button" class="nes-btn is-success">Refuel</button>
+                <div class="three column col5">
+                    <button id='refuel' type="button" class="nes-btn is-success">Refuel</button>
                 </div>
                 
-                <div class="three column col6 new-tires">
-                    <button type="button" class="nes-btn is-primary">Fresh Tires</button>
+                <div class="three column col6">
+                    <button id='new-tires' type="button" class="nes-btn is-primary">Fresh Tires</button>
                 </div>
                
             </section>
