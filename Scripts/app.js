@@ -64,31 +64,38 @@ startTimer(){
             game.mileage++;
             $('#mileage').text(`${game.mileage} miles`);
         }, 
-levelUp(){
-    if( game.mileage == 20,000){ 
-        console.warn('works at least this well');
-        // $('#endGame').html(`<section>
-        //     <button type="button" class="nes-btn is-primary" onclick="document.getElementById('dialog-rounded').showModal();">
-        //       Open rounded dialog
-        //     </button>
-        //     <dialog class="nes-dialog is-rounded" id="dialog-rounded">
-        //       <form method="dialog">
-        //         <p class="title">Rounded dialog</p>
-        //         <p>Alert: this is a dialog.</p>
-        //         <menu class="dialog-menu">
-        //           <button class="nes-btn">Cancel</button>
-        //           <button class="nes-btn is-primary">Confirm</button>
-        //         </menu>
-        //       </form>
-        //     </dialog>
-        //   </section>`);
-        //   $('#dialog-dark-rounded').show();
-        };
-    },
-}
+
+        levelTwo() { 
+            if( game.mileage === 20000){ 
+                $('#endGame').html(`<section>
+                <button id='levelUpBtn' type="button" class="nes-btn is-primary" onclick="document.getElementById('dialog-rounded').showModal();">
+                Open rounded dialog
+                </button>
+                <dialog class="nes-dialog is-rounded" id="dialog-rounded">
+                <form method="dialog">
+                <p class="title">You've rode ${game.mileage} miles!. It's time for a new Bike</p>
+                <img src="https://preview.redd.it/vq9avsoubyd41.png?auto=webp&s=ecfd5383d54cc43c15f07e2943ac87f7e54ac9f0" alt= new bike">
+                <menu class="dialog-menu">
+                <button id="panigale"  class="nes-btn is-primary">Ducati Panigale</button>
+                </menu>
+                </form>
+                </dialog>
+                </section>`);
+                $('#dialog-dark-rounded').show();}
+                $('#panigale').on('click', game.updater);    
+            },
+            updater() { 
+                $('.moto').attr('src','https://media3.giphy.com/media/3NeTe82nxraqaBHBGq/giphy.gif?cid=ecf05e47wuksq92zgah9cpcdv1tq7zctcb7r87yfrnhzf4sd&rid=giphy.gif&ct=g');
+                $('#endGame').hide();
+                $(`#motorcycle`).text('Motorcyle: Ducati Panigale');
+            },
+                
+                
+    };
+        
+
                 
             
-    
 
 const changeOil = function changeOil(){
    return game.oil++;
@@ -104,3 +111,5 @@ const freshTires = function  freshTires(){
     return game.tires++;
 ;}
 const newTires = $('#new-tires').on('click', freshTires);
+
+

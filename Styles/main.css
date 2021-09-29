@@ -4,8 +4,12 @@
     padding: 5px;
 }
 
- .nes-btn, span {
+ .nes-btn, span, p {
     font-family: 'Press Start 2P', sans-serif;
+}
+#levelUpBtn {
+    align-items: center;
+    background-color: gold;
 }
 
 .row2 {
