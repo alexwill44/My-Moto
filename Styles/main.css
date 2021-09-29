@@ -25,11 +25,15 @@
 
 }
 
-
 .row3 {
     display: flex;
 }
 
 .row4 {
     display: flex;
+}
+
+#banner {
+    display: flex;
+    text-justify: center;
 }
