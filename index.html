@@ -16,7 +16,7 @@
 
     <!-- Vendor Scripts-->
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script> -->
 
     <script
     src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -44,36 +44,61 @@
     <main>
         Content goes here
         <section class="game-container">
-           
+            
             <nav class='row1 statusbar'></nav>
-           
+            
             <img src="https://64.media.tumblr.com/159694d8fb55895d39cb6d7bb61ce294/7862d47e225b9b88-ed/s400x600/e828e513b090920934479537dd31481f650e1339.gifv" alt="your bike here" class="row2 moto">
+            
+             <div id="endGame">
+                    </button id="no-oil">
+                    <dialog class="nes-dialog is-dark is-rounded" id="dialog-dark-rounded">
+            <form method="dialog">
+                <p class="title"></p>
+                <p>Clunk!!!</p>
+                <menu class="dialog-menu">
+                <button class="nes-btn">Investigate Noise</button>
+                <button class="nes-btn is-primary">That's It I'm done racing : /</button>
+                </menu>
+            </form>
+                    </dialog>
+                </div>
+            
+            
+        </section>
             
             <section class="row3 timers">
                
-                <div class="col1 oil"></div>
+                <div class="three column col1">
+                    <progress id='oil' class="nes-progress" value=10 max=10></progress>
+                </div>
                
-                <div class="col2 gas"></div>
+                <div class="three column col2">
+                    <progress id= 'gas' class="nes-progress is-success" value=10 max=10></progress>
+                </div>
                
-                <div class="col3 tires"></div>
+                <div class="three column col3">
+                    <progress id="tires" class="nes-progress is-primary" value=10 max=10></progress>
+                </div>
             
             </section>
 
             <section class="row4 tools">
                
-                <div class="col4"></div>
+                <div class="three column col4">
+                    <button id='oilChange' class="nes-btn" href="#">Change Oil</button>
+                </div>
+                
+                <div class="three column col5 refuel">
+                    <button type="button" class="nes-btn is-success">Refuel</button>
+                </div>
+                
+                <div class="three column col6 new-tires">
+                    <button type="button" class="nes-btn is-primary">Fresh Tires</button>
+                </div>
                
-                <div class="col5"></div>
-               
-                <div class="col6"></div>
-            
             </section>
 
-
-
-
         </section>
-
     
 
 </main>

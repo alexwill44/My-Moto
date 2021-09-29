@@ -4,13 +4,28 @@
     padding: 5px;
 }
 
-.container, .nes-text {
-    font-family: 'Press Start 2P', cursive;
+ .nes-btn {
+    font-family: 'Press Start 2P', sans-serif;
 }
 
 .row2 {
     height: 60vh;
     display: flex;
    padding: 0 20vh;
+}
 
+#no-oil {
+    height:60vh;
+    background-color: grey;
+    position: absolute;
+
+}
+
+
+.row3 {
+    display: flex;
+}
+
+.row4 {
+    display: flex;
 }
