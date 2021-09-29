@@ -1,7 +1,7 @@
 console.log('My Moto JS Loaded');
 
 
-$('.test').append($('<div class="container"> put a bike on it </div>'));
+
 
 const game = {
     oil: 10,
@@ -10,7 +10,6 @@ const game = {
     mileage: 0,
     name:'default',
     button: $('#start'),
-    level: 1,
 
 
 timerOne: null,
@@ -19,23 +18,28 @@ timerThree: null,
 timerFour: null,
 
     startTimer(){
-    game.timerOne = setInterval(game.consumeOil, 20000);
+    game.timerOne = setInterval(game.consumeOil, 2000);
     game.timerTwo = setInterval(game.consumeGas, 10000);
     game.timerThree = setInterval(game.consumeTires, 50000);
-    game.timerFour = setInterval(game.addMiles, .1);
+    game.timerFour = setInterval(game.addMiles, .02);
 },
-
+stopTimer(){
+    clearInterval(game.timerOne);
+    clearInterval(game.timerTwo);
+    clearInterval(game.timerThree);
+    clearInterval(game.timerFour);   
+},
     consumeOil(){
         game.oil--;
         $('#oil').attr('value', game.oil--);
-        console.log(game.oil);
         if(game.oil >= 0){
             $('#dialog-dark-rounded').hide();
             }
             else {
             $(`.moto`).attr('src', 'https://cdn3.vectorstock.com/i/1000x1000/33/12/engine-pixel-art-motor-8-bits-vector-27163312.jpg');
             $('#dialog-dark-rounded').show();
-                }
+            game.stopTimer();
+              }
              },      
     consumeGas(){
         game.gas--;
@@ -46,6 +50,7 @@ timerFour: null,
         }
         else {
         $(`.moto`).attr('src', 'https://thumbs.dreamstime.com/b/videogame-pixelated-fuel-can-isolated-symbol-vector-illustration-graphic-design-videogame-pixelated-fuel-can-isolated-symbol-blue-153593022.jpg').show();
+        game.stopTimer();
             }
              },
     consumeTires(){
@@ -58,6 +63,7 @@ timerFour: null,
                     else {
                     $(`.moto`).attr('src', 'http://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/f01e83b37b89fa3.png');
                     $('#dialog-dark-rounded').show();
+                    game.stopTimer();
                         }
              },
     addMiles(){
@@ -65,15 +71,17 @@ timerFour: null,
             $('#mileage').text(`${game.mileage} miles`);
             game.levelUp();
             game.levelThree();
+            game.winner();
         }, 
         
     levelUp() { 
             if (game.mileage === 20000){ 
+                game.stopTimer();
                 console.log('lv 2')
                 $('#lvTwoButton').toggle();
                 $('#lvTwo').html(`<section>
                 <button id='levelUpBtn' type="button" class="nes-btn is-primary" onclick="document.getElementById('dialog-rounded').showModal();">
-                Open rounded dialog
+                Get A New Bike!
                 </button>
                 <dialog class="nes-dialog is-rounded" id="dialog-rounded">
                 <form method="dialog">
@@ -86,19 +94,21 @@ timerFour: null,
                 </dialog>
                 </section>`);
                 {$('#panigale').on('click', game.updater)};
-            }}, 
+            }
+        }, 
 
     levelThree() {               
                 if ( game.mileage === 40000){ 
+                    game.stopTimer();
                     $('#lvThreeButton').toggle();
                     $('#lvThree').html(`<section>
                     <button id='levelUpBtn' type="button" class="nes-btn is-primary" onclick="document.getElementById('dialog-rounded').showModal();">
-                    Open rounded dialog
+                    Your Too Fast for A Ducati!
                     </button>
                     <dialog class="nes-dialog is-rounded" id="dialog-rounded">
                     <form method="dialog">
                     <p class="title">After${game.mileage} miles!. You're a pro its time to step it up...</p>
-                    <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/dda0b858585189.5a01e8bc74617.jpg" alt= new bike">
+                    <img id = "kenda" src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/dda0b858585189.5a01e8bc74617.jpg" alt= new bike">
                     <menu class="dialog-menu">
                     <button id="kenda"  class="nes-btn is-primary">Kaneda’s bike</button>
                     </menu>
@@ -112,9 +122,10 @@ timerFour: null,
                
     winner() {               
                 if ( game.mileage === 60000){ 
+                    game.stopTimer();
                     $('#winner').html(`<section>
                     <button id='win' type="button" class="nes-btn is-primary" onclick="document.getElementById('dialog-rounded').showModal();">
-                    Open rounded dialog
+                    YOU WIN!
                     </button>
                     <dialog class="nes-dialog is-rounded" id="dialog-rounded">
                     <form method="dialog">
@@ -130,18 +141,21 @@ timerFour: null,
                }
             },        
         updater() { 
-                   $('.moto').attr('src','https://media3.giphy.com/media/3NeTe82nxraqaBHBGq/giphy.gif?cid=ecf05e47wuksq92zgah9cpcdv1tq7zctcb7r87yfrnhzf4sd&rid=giphy.gif&ct=g');
+                   $('.moto').attr('src','https://thumbs.gfycat.com/DecentMammothHedgehog-max-1mb.gif');
                    $('#lvTwo').toggle();
                    $(`#motorcycle`).text('Motorcyle: Ducati Panigale');
+                   game.startTimer();
                },
         updaterTwo() { 
                     $('.moto').attr('src','https://media0.giphy.com/media/3o6ZtgUzqKnWCedxAc/giphy.gif?cid=ecf05e47ea0ik1j5nll1k7qoeti1bod7tnzgf0eosxl4txej&rid=giphy.gif&ct=g');
                     $('#lvThree').toggle();
                     $(`#motorcycle`).text('Motorcyle: Kaneda’s Bike');
+                    game.startTimer();
                 },     
         win() { 
                     $('.moto').attr('src','https://media2.giphy.com/media/4asRcRX9jEH5e/giphy.gif?cid=ecf05e47hyqszy7fecac8xwdzlndzm67xcv3vkrq5yaymedi&rid=giphy.gif&ct=g');
                     $(`.statusbar`).html(`<div id="banner"><i class="nes-icon trophy is-large"></i><span>${game.name}<span><i class="nes-icon trophy is-large"></i></div>`);
+                    $('#winner').toggle();
                 
                 },                   
     };
