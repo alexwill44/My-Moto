@@ -8,7 +8,7 @@ const game = {
     gas: 10,
     tires: 10,
     mileage: 0,
-    name:'default',
+    name: ($('#name_field')[0].value),
     button: $('#start'),
 
 
@@ -22,6 +22,9 @@ timerFour: null,
     game.timerTwo = setInterval(game.consumeGas, 10000);
     game.timerThree = setInterval(game.consumeTires, 50000);
     game.timerFour = setInterval(game.addMiles, .02);
+    game.getName();
+    $('#screen').html('<img src="https://64.media.tumblr.com/159694d8fb55895d39cb6d7bb61ce294/7862d47e225b9b88-ed/s400x600/e828e513b090920934479537dd31481f650e1339.gifv" alt="your bike here" class="row2 moto">');
+    $('#rider').text(`${game.name}`);
 },
 stopTimer(){
     clearInterval(game.timerOne);
@@ -156,8 +159,10 @@ stopTimer(){
                     $('#winner').toggle();
                 
                 },                   
+        getName(){
+                   return game.name = ($('#name_field')[0].value);
+                },
     };
-        
    
             
 
@@ -177,3 +182,5 @@ const freshTires = function  freshTires(){
 const newTires = $('#new-tires').on('click', freshTires);
 
 const startGame = game.button.on('click', game.startTimer);
+
+

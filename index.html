@@ -42,7 +42,6 @@
 </head>
 <body>
     <main>
-        <button id="start">click this shit</button>
         <section class="game-container">
             
             <nav class='row1 statusbar'>
@@ -62,7 +61,12 @@
             </nav>
             
             <Section id='screen'>
-            <img src="https://64.media.tumblr.com/159694d8fb55895d39cb6d7bb61ce294/7862d47e225b9b88-ed/s400x600/e828e513b090920934479537dd31481f650e1339.gifv" alt="your bike here" class="row2 moto">
+                <form><div class="nes-field">
+                    <label for="name_field">Input Rider Name: </label>
+                    <input type="text" id="name_field" class="nes-input">
+                  </div>
+                
+                  <button id="start" type="button" class="nes-btn is-warning">Push To Start</button></form>
             </Section>
 
             <div id="winner"></div>
