@@ -7,7 +7,24 @@
 }
 
 
-.timers, .tools, #screen, .col2, .col6{
+
+.timers {
+    min-width: 10px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.tools, .moto {
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+
+.col1, .col2, .col3 {
+    max-width: 33vh;
+}
+
+ #screen, .col1, .col2, .col3, .col4, .col5, .col6{
     display: flex;
     justify-content: space-around;
 }
@@ -16,6 +33,8 @@
     padding: 5px;
     border-radius: 7% ;
     overflow: hidden;
+    max-height: 70vh;
+    
 }
 
 .nes-btn, span, p {
@@ -28,11 +47,6 @@
     background-color: gold;
 }
 
-.row2 {
-   
-    height: 60vh;
-
-}
 
 #no-oil {
     height:60vh;
@@ -49,11 +63,18 @@
     display: flex;
 }
 
-#banner {
+#stats {
     display: flex;
-    text-justify: center;
+    justify-content: space-around;
+    min-width: 20px;
+    flex-wrap: wrap;
 }
 
 #kendaBike {
-    height: 650px;
+    max-height: 450px;
+}
+
+#endGame {
+    position: fixed;
+    z-index: ;
 }

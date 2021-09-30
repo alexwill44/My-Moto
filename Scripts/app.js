@@ -10,6 +10,7 @@ const game = {
     mileage: 0,
     name: ($('#name_field')[0].value),
     button: $('#start'),
+    level: 1, 
 
 
 timerOne: null,
@@ -18,9 +19,9 @@ timerThree: null,
 timerFour: null,
 
     startTimer(){
-    game.timerOne = setInterval(game.consumeOil, 2000);
-    game.timerTwo = setInterval(game.consumeGas, 10000);
-    game.timerThree = setInterval(game.consumeTires, 50000);
+    game.timerOne = setInterval(game.consumeOil, 2000 * game.level);
+    game.timerTwo = setInterval(game.consumeGas, 10000 * game.level);
+    game.timerThree = setInterval(game.consumeTires, 5000 * game.level);
     game.timerFour = setInterval(game.addMiles, .02);
     game.getName();
     $('#screen').html('<img src="https://64.media.tumblr.com/159694d8fb55895d39cb6d7bb61ce294/7862d47e225b9b88-ed/s400x600/e828e513b090920934479537dd31481f650e1339.gifv" alt="your bike here" class="row2 moto">');
@@ -71,7 +72,7 @@ stopTimer(){
              },
     addMiles(){
             game.mileage++;
-            $('#mileage').text(`${game.mileage} miles`);
+            $('#mileage').text(`${game.mileage}`);
             game.levelUp();
             game.levelThree();
             game.winner();
@@ -109,7 +110,7 @@ stopTimer(){
                     </button>
                     <dialog class="nes-dialog is-rounded" id="dialog-rounded">
                     <form method="dialog">
-                    <p class="title">After${game.mileage} miles!. You're a pro its time to step it up...</p>
+                    <p class="title">After ${game.mileage} miles!. You're a pro its time to step it up...</p>
                     <img id = 'kendaBike' src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/dda0b858585189.5a01e8bc74617.jpg" alt= new bike">
                     <menu class="dialog-menu">
                     <button id="kenda"  class="nes-btn is-primary">Kaneda’s bike</button>
@@ -144,13 +145,15 @@ stopTimer(){
         updater() { 
                    $('.moto').attr('src','https://thumbs.gfycat.com/DecentMammothHedgehog-max-1mb.gif');
                    $('#lvTwo').toggle();
-                   $(`#motorcycle`).text('Motorcyle: Ducati Panigale');
+                   $(`#motorcycle`).text('Ducati Panigale');
+                   game.level = .5;
                    game.startTimer();
                },
         updaterTwo() { 
                     $('.moto').attr('src','https://media0.giphy.com/media/3o6ZtgUzqKnWCedxAc/giphy.gif?cid=ecf05e47ea0ik1j5nll1k7qoeti1bod7tnzgf0eosxl4txej&rid=giphy.gif&ct=g');
                     $('#lvThree').toggle();
-                    $(`#motorcycle`).text('Motorcyle: Kaneda’s Bike');
+                    $(`#motorcycle`).text('Kaneda’s Bike');
+                    game.level = .25;
                     game.startTimer();
                 },     
         win() { 

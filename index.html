@@ -25,7 +25,7 @@
 
     
     <!-- Styles -->
-    <link rel="stylesheet" href="/Users/alexwill/Documents/git-projects/Project-Zero/My-Moto/Styles/main.css">
+    <link rel="stylesheet" href="Styles/main.css">
     
     <!-- Fonts -->
     
@@ -35,7 +35,7 @@
         
     <!-- Scripts -->
 
-    <script src="/Users/alexwill/Documents/git-projects/Project-Zero/My-Moto/Scripts/app.js" defer></script>
+    <script src="Scripts/app.js" defer></script>
     
     
     <title>My Moto</title>
@@ -45,17 +45,17 @@
         <section class="game-container">
             
             <nav class='row1 statusbar'>
-                <div class="nes-container is-rounded">
-                    <a href="#" class="three columns nes-badge is-splited">
-                        <span  class="is-dark">Odometer:</span>
-                        <span id='mileage' class="is-primary">0 miles</span>
+                <div id='stats' class=" nes-container is-rounded">
+                    <a href="#" class=" nes-badge is-splited">
+                        <span  class="is-dark">Odo:</span>
+                        <span id='mileage' class="is-primary">0 </span>
                       </a>
-                    <a href="#" class="three columns nes-badge is-splited">
-                        <span class="is-dark">Rider:</span>
-                        <span id='rider' class="is-success">(game.name)</span>
+                    <a href="#" class=" nes-badge is-splited">
+                        <span class="is-dark">Name:</span>
+                        <span id='rider' class="is-success"></span>
                       </a>
-                      <a href="#" class="three columns nes-badge">
-                        <span id= 'motorcycle' class="is-error">Motorcyle: Ducati 888</span>
+                      <a href="#" class=" nes-badge">
+                        <span id= 'motorcycle' class="is-error"> Gamma 500</span>
                       </a>
                   </div>
             </nav>
@@ -103,10 +103,12 @@
                     <dialog class="nes-dialog is-dark is-rounded" id="dialog-dark-rounded">
             <form method="dialog">
                 <p class="title"></p>
-                <p>Clunk!!!</p>
+                <p>Clunk!!!
+                 You ran your Motorcycle out of oil and blew it up!
+                 The race is over for you.
+                </p>
                 <menu class="dialog-menu">
-                <button class="nes-btn">Investigate Noise</button>
-                <button class="nes-btn is-primary">That's It I'm done racing : /</button>
+                <button class="nes-btn is-primary">Retry</button>
                 </menu>
             </form>
                     </dialog>
@@ -133,15 +135,15 @@
 
             <section class="row4 tools">
                
-                <div class="three column col4">
+                <div class=" col4">
                     <button id='oilChange' class="nes-btn" href="#">Change Oil</button>
                 </div>
                 
-                <div class="three column col5">
+                <div class=" col5">
                     <button id='refuel' type="button" class="nes-btn is-success">Refuel</button>
                 </div>
                 
-                <div class="three column col6">
+                <div class=" col6">
                     <button id='new-tires' type="button" class="nes-btn is-primary">Fresh Tires</button>
                 </div>
                
