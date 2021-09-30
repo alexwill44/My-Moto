@@ -3,20 +3,35 @@
     background-color: grey;
     padding: 5px;
     font-family: 'Press Start 2P', sans-serif;
+    box-sizing: border-box;
+}
+
+
+.timers, .tools, #screen, .col2, .col6{
+    display: flex;
+    justify-content: space-around;
+}
+
+#screen{
+    padding: 5px;
+    border-radius: 7% ;
+    overflow: hidden;
 }
 
 .nes-btn, span, p {
     font-family: 'Press Start 2P', sans-serif;
+    display: flex;
 }
+
 #levelUpBtn {
     align-items: center;
     background-color: gold;
 }
 
 .row2 {
+   
     height: 60vh;
-    display: flex;
-   padding: 0 20vh;
+
 }
 
 #no-oil {
