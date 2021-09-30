@@ -5,8 +5,17 @@
     font-family: 'Press Start 2P', sans-serif;
     box-sizing: border-box;
 }
+/* img { 
+    border-radius: 5%;
+    min-width: 50vh;
+    max-width: 60vh;     */
+}
 
-
+#gamma, #ducati, #kendaBike {
+    border-radius: 5%;
+    min-width: 60vh;
+    max-width: 60vh;
+}
 
 .timers {
     min-width: 10px;
@@ -75,6 +84,12 @@
 }
 
 #endGame {
-    position: fixed;
-    z-index: ;
+    position: relative;
+    z-index: 100 ;
+}
+
+@media (max-width: 550px) {
+    width: 100%;
+    box-sizing: border-box;
+    flex-shrink::content ;
 }

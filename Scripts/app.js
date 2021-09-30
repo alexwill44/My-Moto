@@ -4,6 +4,8 @@ console.log('My Moto JS Loaded');
 
 
 const game = {
+
+  // === Variables ===
     oil: 10,
     gas: 10,
     tires: 10,
@@ -18,16 +20,18 @@ timerTWo: null,
 timerThree: null,
 timerFour: null,
 
+// ===  Methods ===
+
     startTimer(){
     game.timerOne = setInterval(game.consumeOil, 2000 * game.level);
     game.timerTwo = setInterval(game.consumeGas, 10000 * game.level);
     game.timerThree = setInterval(game.consumeTires, 5000 * game.level);
     game.timerFour = setInterval(game.addMiles, .02);
     game.getName();
-    $('#screen').html('<img src="https://64.media.tumblr.com/159694d8fb55895d39cb6d7bb61ce294/7862d47e225b9b88-ed/s400x600/e828e513b090920934479537dd31481f650e1339.gifv" alt="your bike here" class="row2 moto">');
+    $('#screen').html('<img  id="gamma" src="https://64.media.tumblr.com/159694d8fb55895d39cb6d7bb61ce294/7862d47e225b9b88-ed/s400x600/e828e513b090920934479537dd31481f650e1339.gifv" alt="your bike here" class="row2 moto">');
     $('#rider').text(`${game.name}`);
 },
-stopTimer(){
+    stopTimer(){
     clearInterval(game.timerOne);
     clearInterval(game.timerTwo);
     clearInterval(game.timerThree);
@@ -40,7 +44,7 @@ stopTimer(){
             $('#dialog-dark-rounded').hide();
             }
             else {
-            $(`.moto`).attr('src', 'https://cdn3.vectorstock.com/i/1000x1000/33/12/engine-pixel-art-motor-8-bits-vector-27163312.jpg');
+            $(`.moto`).attr('src', 'https://media4.giphy.com/media/PhNdG288og3SSLokOz/giphy.gif?cid=ecf05e47sjejfvrhj6kq829den7xsn3og6kbedicgpkbgykl&rid=giphy.gif&ct=g');
             $('#dialog-dark-rounded').show();
             game.stopTimer();
               }
@@ -90,7 +94,7 @@ stopTimer(){
                 <dialog class="nes-dialog is-rounded" id="dialog-rounded">
                 <form method="dialog">
                 <p class="title">You've rode ${game.mileage} miles!. It's time for a new Bike</p>
-                <img src="https://preview.redd.it/vq9avsoubyd41.png?auto=webp&s=ecfd5383d54cc43c15f07e2943ac87f7e54ac9f0" alt= "new bike">
+                <img id="ducati" src="https://preview.redd.it/vq9avsoubyd41.png?auto=webp&s=ecfd5383d54cc43c15f07e2943ac87f7e54ac9f0" alt= "new bike">
                 <menu class="dialog-menu">
                 <button id="panigale"  class="nes-btn is-primary">Ducati Panigale</button>
                 </menu>
@@ -142,17 +146,20 @@ stopTimer(){
                 }
                }
             },        
-        updater() { 
+       
+    // === Sub Methods ===
+
+         updater() { 
                    $('.moto').attr('src','https://thumbs.gfycat.com/DecentMammothHedgehog-max-1mb.gif');
                    $('#lvTwo').toggle();
-                   $(`#motorcycle`).text('Ducati Panigale');
+                   $(`#motorcycle`).text('Panigale');
                    game.level = .5;
                    game.startTimer();
                },
         updaterTwo() { 
                     $('.moto').attr('src','https://media0.giphy.com/media/3o6ZtgUzqKnWCedxAc/giphy.gif?cid=ecf05e47ea0ik1j5nll1k7qoeti1bod7tnzgf0eosxl4txej&rid=giphy.gif&ct=g');
                     $('#lvThree').toggle();
-                    $(`#motorcycle`).text('Kaneda’s Bike');
+                    $(`#motorcycle`).text('Super K');
                     game.level = .25;
                     game.startTimer();
                 },     
@@ -167,7 +174,7 @@ stopTimer(){
                 },
     };
    
-            
+// Event Listeners 
 
 const changeOil = function changeOil(){
    return game.oil++;
@@ -186,4 +193,7 @@ const newTires = $('#new-tires').on('click', freshTires);
 
 const startGame = game.button.on('click', game.startTimer);
 
+const $gameRestart = $('.restart').click(function(){
+    location.reload();
+});
 
