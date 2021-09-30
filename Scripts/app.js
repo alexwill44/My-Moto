@@ -44,7 +44,10 @@ timerFour: null,
             $('#dialog-dark-rounded').hide();
             }
             else {
-            $(`.moto`).attr('src', 'https://media4.giphy.com/media/PhNdG288og3SSLokOz/giphy.gif?cid=ecf05e47sjejfvrhj6kq829den7xsn3og6kbedicgpkbgykl&rid=giphy.gif&ct=g');
+                $(`.moto`).attr('src', 'https://media4.giphy.com/media/PhNdG288og3SSLokOz/giphy.gif?cid=ecf05e47sjejfvrhj6kq829den7xsn3og6kbedicgpkbgykl&rid=giphy.gif&ct=g');
+            $('#game-over').html(`<p>Clunk!!!
+                You ran your Motorcycle out of oil and blew it up!
+                The race is over for you.</p>`);
             $('#dialog-dark-rounded').show();
             game.stopTimer();
               }
@@ -58,6 +61,8 @@ timerFour: null,
         }
         else {
         $(`.moto`).attr('src', 'https://thumbs.dreamstime.com/b/videogame-pixelated-fuel-can-isolated-symbol-vector-illustration-graphic-design-videogame-pixelated-fuel-can-isolated-symbol-blue-153593022.jpg').show();
+        $('#game-over').html('<p>You ran out of gas.... everyone is laughing at you!</p>');
+        $('#dialog-dark-rounded').show();
         game.stopTimer();
             }
              },
@@ -67,10 +72,11 @@ timerFour: null,
                 console.log(game.tires);
                 if(game.tires >= 0){
                     $('#dialog-dark-rounded').hide();
-                    }
-                    else {
-                    $(`.moto`).attr('src', 'http://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/f01e83b37b89fa3.png');
-                    $('#dialog-dark-rounded').show();
+                }
+                else {
+                $(`.moto`).attr('src', 'http://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/f01e83b37b89fa3.png');
+                $('#game-over').html('<p>You Failed to take care of your tires and they BLEW OUT... Your done racing`</p>');
+                $('#dialog-dark-rounded').show();
                     game.stopTimer();
                         }
              },

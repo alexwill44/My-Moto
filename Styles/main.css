@@ -1,6 +1,7 @@
 * {
-    border: 2px solid blue;
-    background-color: grey;
+    max-width: 580px;
+    
+    
     padding: 5px;
     font-family: 'Press Start 2P', sans-serif;
     box-sizing: border-box;
@@ -8,8 +9,15 @@
 /* img { 
     border-radius: 5%;
     min-width: 50vh;
-    max-width: 60vh;     */
+    max-width: 60vh;     }*/
+
+main {
+    background-image: url(https://i.pinimg.com/564x/24/04/91/2404918faac44d214bbd657468b43cc0.jpg);
+    margin: 10px, auto;
+    border-radius: 5%;
+
 }
+
 
 #gamma, #ducati, #kendaBike {
     border-radius: 5%;
@@ -30,7 +38,7 @@
 }
 
 .col1, .col2, .col3 {
-    max-width: 33vh;
+    max-width: 25vh;
 }
 
  #screen, .col1, .col2, .col3, .col4, .col5, .col6{
