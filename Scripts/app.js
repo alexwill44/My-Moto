@@ -96,7 +96,6 @@ stopTimer(){
                 {$('#panigale').on('click', game.updater)};
             }
         }, 
-
     levelThree() {               
                 if ( game.mileage === 40000){ 
                     game.stopTimer();
@@ -108,7 +107,7 @@ stopTimer(){
                     <dialog class="nes-dialog is-rounded" id="dialog-rounded">
                     <form method="dialog">
                     <p class="title">After${game.mileage} miles!. You're a pro its time to step it up...</p>
-                    <img id = "kenda" src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/dda0b858585189.5a01e8bc74617.jpg" alt= new bike">
+                    <img id = 'kendaBike' src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/dda0b858585189.5a01e8bc74617.jpg" alt= new bike">
                     <menu class="dialog-menu">
                     <button id="kenda"  class="nes-btn is-primary">Kaneda’s bike</button>
                     </menu>
@@ -118,8 +117,7 @@ stopTimer(){
                     {$('#kenda').on('click', game.updaterTwo);     
                 }
                }
-            },
-               
+            },            
     winner() {               
                 if ( game.mileage === 60000){ 
                     game.stopTimer();
