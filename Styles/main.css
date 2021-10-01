@@ -4,10 +4,6 @@
     font-family: 'Press Start 2P', sans-serif;
     box-sizing: border-box;
 }
-/* img { 
-    border-radius: 5%;
-    min-width: 50vh;
-    max-width: 60vh;     }*/
 
 main {
     background-image: url(https://i.pinimg.com/564x/24/04/91/2404918faac44d214bbd657468b43cc0.jpg);
@@ -23,7 +19,6 @@ main {
 
 .timers {
     min-width: 10px;
-    
     justify-content: space-between;
 }
 
@@ -56,10 +51,21 @@ main {
 }
 
 #levelUpBtn {
-    align-items: center;
     background-color: gold;
+    position: relative;
+    left: 50%;
+    transform:translateX(-50%);
 }
 
+#win, #kenda, #panigale, #cutscene  { 
+    position: relative;
+    left: 50%;
+    transform:translateX(-50%);
+}
+
+#cutscene {
+    background-color: red;
+}
 
 #no-oil {
     height:60vh;
@@ -77,7 +83,8 @@ main {
 }
 
 h1 {
-
+color:white;
+text-decoration: underline; 
 }
 
 #stats, #banner {
@@ -103,10 +110,3 @@ h1 {
     z-index: 100 ;
 }
 
-
-/* @media (max-width: 550px) {
-     {
-        display:flex;
-        flex-wrap: column;
-    }
-} */

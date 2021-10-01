@@ -6,9 +6,9 @@ console.log('My Moto JS Loaded');
 const game = {
 
   // === Variables ===
-    oil: 10,
-    gas: 10,
-    tires: 10,
+    oil: 100,
+    gas: 100,
+    tires: 100,
     mileage: 0,
     name: ($('#name_field')[0].value),
     button: $('#start'),
@@ -23,9 +23,9 @@ timerFour: null,
 // ===  Methods ===
 
     startTimer(){
-    game.timerOne = setInterval(game.consumeOil, 10000 * game.level);
-    game.timerTwo = setInterval(game.consumeGas, 6000 * game.level);
-    game.timerThree = setInterval(game.consumeTires, 8000 * game.level);
+    game.timerOne = setInterval(game.consumeOil, 600 * game.level);
+    game.timerTwo = setInterval(game.consumeGas, 600 * game.level);
+    game.timerThree = setInterval(game.consumeTires, 600 * game.level);
     game.timerFour = setInterval(game.addMiles, .02);
     game.getName();
     $('#screen').html('<img  id="gamma" src="https://64.media.tumblr.com/159694d8fb55895d39cb6d7bb61ce294/7862d47e225b9b88-ed/s400x600/e828e513b090920934479537dd31481f650e1339.gifv" alt="your bike here" class="row2 moto">');
@@ -44,7 +44,7 @@ timerFour: null,
             $('#dialog-dark-rounded').hide();
             }
             else {
-                $(`.moto`).attr('src', 'https://media4.giphy.com/media/PhNdG288og3SSLokOz/giphy.gif?cid=ecf05e47sjejfvrhj6kq829den7xsn3og6kbedicgpkbgykl&rid=giphy.gif&ct=g');
+             $(`.moto`).attr('src', 'https://media4.giphy.com/media/PhNdG288og3SSLokOz/giphy.gif?cid=ecf05e47sjejfvrhj6kq829den7xsn3og6kbedicgpkbgykl&rid=giphy.gif&ct=g');
             $('#game-over').html(`<p>Clunk!!!
                 You ran your Motorcycle out of oil and blew it up!
                 The race is over for you.</p>`);
@@ -137,13 +137,13 @@ timerFour: null,
                     game.stopTimer();
                     $('#winner').html(`<section>
                     <button id='win' type="button" class="nes-btn is-primary" onclick="document.getElementById('dialog-rounded').showModal();">
-                    YOU WIN!
+                    What's Next???? 
                     </button>
                     <dialog class="nes-dialog is-rounded" id="dialog-rounded">
                     <form method="dialog">
                     <p class="title">You made it ${game.mileage} miles!. You're the best to ever put the rubber to the road!</p>
                     <menu class="dialog-menu">
-                    <button id="cutscene"  class="nes-btn is-primary">You Win</button>
+                    <button id="cutscene"  class="nes-btn is-primary">You Win!!!!</button>
                     </menu>
                     </form>
                     </dialog>
@@ -155,7 +155,7 @@ timerFour: null,
        
     // === Sub Methods ===
 
-         updater() { 
+        updater() { 
                    $('.moto').attr('src','https://thumbs.gfycat.com/DecentMammothHedgehog-max-1mb.gif');
                    $('#lvTwo').toggle();
                    $(`#motorcycle`).text('Panigale');
