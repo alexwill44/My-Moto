@@ -23,9 +23,9 @@ timerFour: null,
 // ===  Methods ===
 
     startTimer(){
-    game.timerOne = setInterval(game.consumeOil, 2000 * game.level);
-    game.timerTwo = setInterval(game.consumeGas, 10000 * game.level);
-    game.timerThree = setInterval(game.consumeTires, 5000 * game.level);
+    game.timerOne = setInterval(game.consumeOil, 10000 * game.level);
+    game.timerTwo = setInterval(game.consumeGas, 6000 * game.level);
+    game.timerThree = setInterval(game.consumeTires, 8000 * game.level);
     game.timerFour = setInterval(game.addMiles, .02);
     game.getName();
     $('#screen').html('<img  id="gamma" src="https://64.media.tumblr.com/159694d8fb55895d39cb6d7bb61ce294/7862d47e225b9b88-ed/s400x600/e828e513b090920934479537dd31481f650e1339.gifv" alt="your bike here" class="row2 moto">');
@@ -166,12 +166,18 @@ timerFour: null,
                     $('.moto').attr('src','https://media0.giphy.com/media/3o6ZtgUzqKnWCedxAc/giphy.gif?cid=ecf05e47ea0ik1j5nll1k7qoeti1bod7tnzgf0eosxl4txej&rid=giphy.gif&ct=g');
                     $('#lvThree').toggle();
                     $(`#motorcycle`).text('Super K');
-                    game.level = .25;
+                    game.level = .35;
                     game.startTimer();
                 },     
         win() { 
                     $('.moto').attr('src','https://media2.giphy.com/media/4asRcRX9jEH5e/giphy.gif?cid=ecf05e47hyqszy7fecac8xwdzlndzm67xcv3vkrq5yaymedi&rid=giphy.gif&ct=g');
-                    $(`.statusbar`).html(`<div id="banner"><i class="nes-icon trophy is-large"></i><span>${game.name}<span><i class="nes-icon trophy is-large"></i></div>`);
+                    $(`.statusbar`).html(`<div id="banner"><i class="nes-icon trophy is-large"></i><h1>${game.name}<h1><i class="nes-icon trophy is-large"></i></div>`);
+                    $('.timers' ).hide();
+                    $('.tools' ).hide();
+                    $('.game-container').append(`<button class="restart nes-btn is-primary">Retry</button>`);
+                    const $gameRestart = $('.restart').click(function(){
+                        location.reload();
+                    });
                     $('#winner').toggle();
                 
                 },                   

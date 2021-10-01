@@ -1,7 +1,5 @@
 * {
-    max-width: 580px;
-    
-    
+    max-width: 587px;
     padding: 5px;
     font-family: 'Press Start 2P', sans-serif;
     box-sizing: border-box;
@@ -13,17 +11,15 @@
 
 main {
     background-image: url(https://i.pinimg.com/564x/24/04/91/2404918faac44d214bbd657468b43cc0.jpg);
-    margin: 10px, auto;
+    padding: 10px;
     border-radius: 5%;
-
+    background-size: 570px;
 }
 
 
 #gamma, #ducati, #kendaBike {
     border-radius: 5%;
-    min-width: 60vh;
-    max-width: 60vh;
-}
+    width: 100%;}
 
 .timers {
     min-width: 10px;
@@ -80,7 +76,11 @@ main {
     display: flex;
 }
 
-#stats {
+h1 {
+
+}
+
+#stats, #banner {
     display: flex;
     justify-content: space-around;
     min-width: 20px;
@@ -91,13 +91,22 @@ main {
     max-height: 450px;
 }
 
+.restart{
+    position: relative;
+    left: 50%;
+    transform:translateX(-50%);
+    background-image: url(https://image.shutterstock.com/image-vector/line-yellow-black-color-caution-260nw-587563217.jpg);
+}
+
 #endGame {
     position: relative;
     z-index: 100 ;
 }
 
-@media (max-width: 550px) {
-    width: 100%;
-    box-sizing: border-box;
-    flex-shrink::content ;
-}
+
+/* @media (max-width: 550px) {
+     {
+        display:flex;
+        flex-wrap: column;
+    }
+} */
