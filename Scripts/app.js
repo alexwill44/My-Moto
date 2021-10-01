@@ -12,7 +12,7 @@ const game = {
     mileage: 0,
     name: ($('#name_field')[0].value),
     button: $('#start'),
-    level: 1, 
+    difficulty: 1.5, 
 
 
 timerOne: null,
@@ -23,9 +23,9 @@ timerFour: null,
 // ===  Methods ===
 
     startTimer(){
-    game.timerOne = setInterval(game.consumeOil, 600 * game.level);
-    game.timerTwo = setInterval(game.consumeGas, 600 * game.level);
-    game.timerThree = setInterval(game.consumeTires, 600 * game.level);
+    game.timerOne = setInterval(game.consumeOil, 600 * game.difficulty);
+    game.timerTwo = setInterval(game.consumeGas, 600 * game.difficulty);
+    game.timerThree = setInterval(game.consumeTires, 600 * game.difficulty);
     game.timerFour = setInterval(game.addMiles, .02);
     game.getName();
     $('#screen').html('<img  id="gamma" src="https://64.media.tumblr.com/159694d8fb55895d39cb6d7bb61ce294/7862d47e225b9b88-ed/s400x600/e828e513b090920934479537dd31481f650e1339.gifv" alt="your bike here" class="row2 moto">');
@@ -74,8 +74,8 @@ timerFour: null,
                     $('#dialog-dark-rounded').hide();
                 }
                 else {
-                $(`.moto`).attr('src', `http://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/f01e83b37b89fa3.png');
-                $('#game-over').html('<p>You Failed to take care of your tires and they BLEW OUT... You're done racing</p>`);
+                $(`.moto`).attr('src', 'http://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/f01e83b37b89fa3.png');
+                $('#game-over').html('<p>You Failed to take care of your tires and they BLEW OUT... You are done racing</p>');
                 $('#dialog-dark-rounded').show();
                     game.stopTimer();
                         }
@@ -116,11 +116,11 @@ timerFour: null,
                     $('#lvThreeButton').toggle();
                     $('#lvThree').html(`<section>
                     <button id='levelUpBtn' type="button" class="nes-btn is-primary" onclick="document.getElementById('dialog-rounded').showModal();">
-                    You're Too Fast for A Ducati!
+                    Time to Upgrade!
                     </button>
                     <dialog class="nes-dialog is-rounded" id="dialog-rounded">
                     <form method="dialog">
-                    <p class="title">After ${game.mileage} miles!. You're a pro its time to step it up...</p>
+                    <p class="title">After ${game.mileage} miles. You're a pro its time to step it up...</p>
                     <img id = 'kendaBike' src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/dda0b858585189.5a01e8bc74617.jpg" alt= new bike">
                     <menu class="dialog-menu">
                     <button id="kenda"  class="nes-btn is-primary">Kaneda’s bike</button>
@@ -156,17 +156,17 @@ timerFour: null,
     // === Sub Methods ===
 
         updater() { 
-                   $('.moto').attr('src','https://thumbs.gfycat.com/DecentMammothHedgehog-max-1mb.gif');
+                   $('.moto').attr('src','https://64.media.tumblr.com/8812488bc1a6e81a95739b28a227d228/tumblr_no8wxfpPqO1qd4q8ao1_500.gifv');
                    $('#lvTwo').toggle();
                    $(`#motorcycle`).text('Panigale');
-                   game.level = .5;
+                   game.difficulty = 1;
                    game.startTimer();
                },
         updaterTwo() { 
                     $('.moto').attr('src','https://media0.giphy.com/media/3o6ZtgUzqKnWCedxAc/giphy.gif?cid=ecf05e47ea0ik1j5nll1k7qoeti1bod7tnzgf0eosxl4txej&rid=giphy.gif&ct=g');
                     $('#lvThree').toggle();
                     $(`#motorcycle`).text('Super K');
-                    game.level = .35;
+                    game.difficulty = .5;
                     game.startTimer();
                 },     
         win() { 
