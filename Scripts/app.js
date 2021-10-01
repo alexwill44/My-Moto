@@ -74,8 +74,8 @@ timerFour: null,
                     $('#dialog-dark-rounded').hide();
                 }
                 else {
-                $(`.moto`).attr('src', 'http://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/f01e83b37b89fa3.png');
-                $('#game-over').html('<p>You Failed to take care of your tires and they BLEW OUT... Your done racing`</p>');
+                $(`.moto`).attr('src', `http://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/f01e83b37b89fa3.png');
+                $('#game-over').html('<p>You Failed to take care of your tires and they BLEW OUT... You're done racing</p>`);
                 $('#dialog-dark-rounded').show();
                     game.stopTimer();
                         }
@@ -99,7 +99,7 @@ timerFour: null,
                 </button>
                 <dialog class="nes-dialog is-rounded" id="dialog-rounded">
                 <form method="dialog">
-                <p class="title">You've rode ${game.mileage} miles!. It's time for a new Bike</p>
+                <p class="title">You've ridden ${game.mileage} miles!. It's time for a new Bike</p>
                 <img id="ducati" src="https://preview.redd.it/vq9avsoubyd41.png?auto=webp&s=ecfd5383d54cc43c15f07e2943ac87f7e54ac9f0" alt= "new bike">
                 <menu class="dialog-menu">
                 <button id="panigale"  class="nes-btn is-primary">Ducati Panigale</button>
@@ -116,7 +116,7 @@ timerFour: null,
                     $('#lvThreeButton').toggle();
                     $('#lvThree').html(`<section>
                     <button id='levelUpBtn' type="button" class="nes-btn is-primary" onclick="document.getElementById('dialog-rounded').showModal();">
-                    Your Too Fast for A Ducati!
+                    You're Too Fast for A Ducati!
                     </button>
                     <dialog class="nes-dialog is-rounded" id="dialog-rounded">
                     <form method="dialog">
