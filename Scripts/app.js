@@ -14,18 +14,17 @@ const game = {
     button: $('#start'),
     difficulty: 1.5, 
 
-
-timerOne: null,
-timerTWo: null,
-timerThree: null,
-timerFour: null,
+        timerOne: null,
+        timerTWo: null,
+        timerThree: null,
+        timerFour: null,
 
 // ===  Methods ===
 
     startTimer(){
-    game.timerOne = setInterval(game.consumeOil, 600 * game.difficulty);
+    game.timerOne = setInterval(game.consumeOil, 700 * game.difficulty);
     game.timerTwo = setInterval(game.consumeGas, 600 * game.difficulty);
-    game.timerThree = setInterval(game.consumeTires, 600 * game.difficulty);
+    game.timerThree = setInterval(game.consumeTires, 800 * game.difficulty);
     game.timerFour = setInterval(game.addMiles, .02);
     game.getName();
     $('#screen').html('<img  id="gamma" src="https://64.media.tumblr.com/159694d8fb55895d39cb6d7bb61ce294/7862d47e225b9b88-ed/s400x600/e828e513b090920934479537dd31481f650e1339.gifv" alt="your bike here" class="row2 moto">');
