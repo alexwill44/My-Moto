@@ -30,3 +30,8 @@ I really just focused on one page that could feel like it was progressing a narr
 My first unsolved problem is if you can spam fast enough there is no cap to the value for the gauges - my quick fix was make the values so large and depreciate so quick that it was not really possible to get that far about the indicated max.
 
 My only other unsolved problem was the start timer functionality includes the populate name logic so every-time you level up there is a console.error, but everything runs fine -> I think this could be easily fixed with an IF function but I ran out of time. 
+
+![Imgur](https://i.imgur.com/dBKYPZI.jpg)
+
+![Imgur](https://i.imgur.com/kGFrbIe.jpg)
+
