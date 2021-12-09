@@ -1,5 +1,5 @@
 # My-Moto
-*** please run only on chrome**
+*** Please run on google chrome ***
 Ride and repair your own motorcycle, do you have what it takes to keep it on the road?
 
 The rules are simple:
